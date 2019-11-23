@@ -1,0 +1,9 @@
+select UploadID, InstituteName, Subject, CQ, MCQ
+from (
+select UploadID, InstituteName, Subject, UploadType
+from UploadDetails INNER Join Upload ON Upload.ID=UploadDetails.UploadID
+)TEMP 
+PIVOT
+(
+COUNT(UploadType) for UploadType in (CQ, MCQ)
+)PIV 
