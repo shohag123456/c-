@@ -1,0 +1,24 @@
+create database sk;
+
+create table orderr 
+(
+	[Order No] nvarchar(50) not null primary key, 
+	[Date] date,
+	[Customer Name] nvarchar(50)
+);
+
+insert into orderr values('1','2019-11-01','Sk');
+insert into orderr values('2','2019-11-02','Mew');
+select * from orderr;
+ 
+
+create table order_item 
+(
+	[Order No] nvarchar(50) not null primary key, 
+	[Item] nvarchar(50),
+	[Quantity] nvarchar(50)
+);
+ 
+insert into order_item values('1','Monitor','20');
+insert into order_item values('2','Keyboard','10');
+select * from order_item;
